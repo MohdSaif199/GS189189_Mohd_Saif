@@ -1,0 +1,12 @@
+.store-btn{
+    background-color: #ffab91;
+    color: #000;
+    border: none !important;
+
+  }
+
+  .store-btn:hover{
+    background-color: #ffab91 !important;
+    color: #000;
+    border: none !important;
+  }

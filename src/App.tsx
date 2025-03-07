@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import Navbar from './pages/Navbar/Navbar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Sidebar from './pages/Sidebar/Sidebar';
+import Store from './pages/Store/Store';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Router>
+        <Provider store={store}>
+          <div className="container">
+            <Sidebar />
+          </div>
+          <div className="content">
+            <Routes>
+              <Route path="/" element={<Store />} />
+            </Routes>
+          </div>
+        </Provider>
+      </Router>
     </div>
   );
 }
