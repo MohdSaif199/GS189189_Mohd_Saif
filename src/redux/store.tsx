@@ -3,9 +3,9 @@ import storeArrayReducer from "./slice";
 import skuArrayReducer from "./skuSlice";
 
 export const store = configureStore({
-    reducer:{
+    reducer: {
         storeArray: storeArrayReducer,
-        skuArray: skuArrayReducer
+        skuArray: skuArrayReducer,
     }
 })
 

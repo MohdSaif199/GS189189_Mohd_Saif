@@ -8,6 +8,7 @@ import Store from './pages/Store/Store';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import SkuComp from './pages/SKU/SkuComp';
+import Planning from './pages/Planning/Planning';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Store />} />
               <Route path="/sku" element={<SkuComp />} />
+              <Route path="/planning" element={<Planning />} />
             </Routes>
           </div>
         </Provider>
