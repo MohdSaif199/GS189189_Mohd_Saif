@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import storeArrayReducer from "./slice";
+import skuArrayReducer from "./skuSlice";
 
 export const store = configureStore({
     reducer:{
-        storeArray: storeArrayReducer
+        storeArray: storeArrayReducer,
+        skuArray: skuArrayReducer
     }
 })
 

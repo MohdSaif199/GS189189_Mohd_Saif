@@ -7,6 +7,7 @@ import Sidebar from './pages/Sidebar/Sidebar';
 import Store from './pages/Store/Store';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import SkuComp from './pages/SKU/SkuComp';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <div className="content">
             <Routes>
               <Route path="/" element={<Store />} />
+              <Route path="/sku" element={<SkuComp />} />
             </Routes>
           </div>
         </Provider>
