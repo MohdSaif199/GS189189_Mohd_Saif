@@ -147,7 +147,7 @@ const SkuComp = () => {
                     gridOptions={gridOptions}
                 />
             </div>
-            <Button className='store-btn mt-4' variant="primary" size='lg' onClick={() => handleShow(true)}>
+            <Button className='store-btn mt-4' variant="primary" active size='lg' onClick={() => handleShow(true)}>
                 NEW SKU
             </Button>
 

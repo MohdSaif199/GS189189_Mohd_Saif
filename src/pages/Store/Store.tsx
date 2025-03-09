@@ -129,7 +129,7 @@ const Store = () => {
                     gridOptions={gridOptions}
                 />
             </div>
-            <Button className='store-btn mt-4' variant="primary" size='lg' onClick={() => handleShow(true)}>
+            <Button className='store-btn mt-4' variant="primary" size='lg' active onClick={() => handleShow(true)}>
                 NEW STORE
             </Button>
 
