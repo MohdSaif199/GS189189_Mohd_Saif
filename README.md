@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -12,36 +8,24 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
-### `npm run build`
+### Things I have done Well
+1. I have kept code as modular as possible defining component for each task.
+2. Using Redux toolkit rather than traditional redux which can become complex and bottleneck in some of the complex cases for managing complex state.
+3. Using Bootstrap with React Bootstrap so that i can use the classes from the bootstraps and also the component such as Modal,Form,Select from the React Bootstrap package.
+4. Using Redux for managing global states so that it can be passed to different components and gives user a seamless experience.
+5. Minimal use of external CSS as it can sometimes makes the code complicated so used bootstrap classses for flexing and other things.
+6. Using interafaces for defining the types of the redux state so that the keys and values from the state can be accessed easily.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Things I will try to improve
+1. I would have applied user login and and login page so that the user can login and then the user will see the Viewer App.
+2. I would have worked on the beautification of the app such that the table design,button designs and als the Navbar design.
+3. I would have used Jest for Unit Testing.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# GS189189_Mohd_Saif
+### Feedbacks
+1. The Planning page should have been explained more thoroughly as it a bit complicated and the user would have been confused in the first attempt.
