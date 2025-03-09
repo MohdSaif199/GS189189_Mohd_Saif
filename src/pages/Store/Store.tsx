@@ -166,10 +166,18 @@ const Store = () => {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="outline-primary" type='submit' onClick={(e) => (addUpdateStore(e))}>
+                    <Button variant="outline-primary" type='submit'
+
+                        disabled={!formDetails.storeName || !formDetails.city || !formDetails.state}
+
+                        onClick={(e) => (addUpdateStore(e))}>
                         {isEdit ? "Update Store" : "Add Store"}
                     </Button>
                 </Modal.Footer>
+                <div className='fs-6 d-block text-danger text-end ps-3 px-2
+                pb-2'>
+                    {(!formDetails.storeName || !formDetails.city || !formDetails.state) && "Please fill all the fields"}
+                </div>
             </Modal>
         </div>
     )
