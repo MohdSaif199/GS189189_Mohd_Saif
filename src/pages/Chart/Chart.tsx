@@ -9,7 +9,7 @@ import { PlanningDetails } from '../Planning/Planning';
 const Chart = () => {
     const storeArray = useSelector((state: any) => state.storeArray.storeArray);
     const planningArray = useSelector((state: any) => state.planning.rowData);
-    const [selectedStore, setSelectedStore] = React.useState<string>(storeArray[0].storeName)
+    const [selectedStore, setSelectedStore] = React.useState<string>(storeArray[0]?.storeName || "")
 
     const processedData = useMemo(() => {
         const weeklyData: Record<string, { week: string; salesDollars: number; gmDollars: number; gmPercentage?: number }> = {};
