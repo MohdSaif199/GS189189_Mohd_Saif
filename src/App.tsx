@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import SkuComp from './pages/SKU/SkuComp';
 import Planning from './pages/Planning/Planning';
+import Chart from './pages/Chart/Chart';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path="/" element={<Store />} />
               <Route path="/sku" element={<SkuComp />} />
               <Route path="/planning" element={<Planning />} />
+              <Route path="/chart" element={<Chart />}></Route>
             </Routes>
           </div>
         </Provider>

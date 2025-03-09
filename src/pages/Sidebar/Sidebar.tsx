@@ -17,7 +17,7 @@ const Sidebar = () => {
                 <Link to="/" onClick={() => setActivePage("store")} className={`${activePage === "store" ? "active" : ""}`}>Store</Link>
                 <Link to="/sku" onClick={() => setActivePage("sku")} className={`${activePage === "sku" ? "active" : ""}`}>SKU</Link>
                 <Link to="/planning" onClick={() => setActivePage("planning")} className={`${activePage === "planning" ? "active" : ""}`}>Planning</Link>
-                <Link to="/page4" onClick={() => setActivePage("charts")} className={`${activePage === "charts" ? "active" : ""}`}>Charts</Link>
+                <Link to="/chart" onClick={() => setActivePage("chart")} className={`${activePage === "chart" ? "active" : ""}`}>Charts</Link>
             </div>
         </>
     )
