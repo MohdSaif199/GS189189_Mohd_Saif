@@ -11,9 +11,9 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 
 export interface skuDetails {
     skuName: string,
-    price: number,
-    cost: number,
-    id: number,
+    price: number | "",
+    cost: number | "",
+    id: number | "",
 }
 
 const SkuComp = () => {
@@ -55,9 +55,28 @@ const SkuComp = () => {
     const [formDetails, setFormDetails] = useState<skuDetails>({
         id: new Date().getTime(),
         skuName: "",
-        price: 0,
-        cost: 0
+        price: "",
+        cost: ""
     })
+
+    // This is for handling the form change and validing cost and price values
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        if (name !== "skuName") {
+            // Prevent negative numbers
+            if (value === "" || Number(value) >= 0) {
+                setFormDetails((prev) => ({
+                    ...prev,
+                    [name]: value === "" ? "" : Number(value)
+                }));
+            }
+        } else {
+            setFormDetails((prev) => ({
+                ...prev,
+                [name]: value
+            }));
+        }
+    };
 
     // This is for closing and opening the modal
     const handleClose = () => setShow(false);
@@ -141,34 +160,52 @@ const SkuComp = () => {
                     <Form>
                         <Form.Group className="mb-3">
                             <Form.Label>SKU Name</Form.Label>
-                            <Form.Control type="text" value={formDetails?.skuName} placeholder="Enter SKU Name" onChange={(e) => {
-                                setFormDetails({ ...formDetails, skuName: e.target.value })
-                            }} />
+                            <Form.Control
+                                type="text"
+                                name="skuName"
+                                value={formDetails.skuName}
+                                placeholder="Enter SKU Name"
+                                onChange={handleChange}
+                            />
                         </Form.Group>
 
                         <Form.Group className="mb-3">
                             <Form.Label>Price</Form.Label>
-                            <Form.Control type="number" value={formDetails?.price} placeholder="Enter Price" onChange={(e) => {
-                                setFormDetails({ ...formDetails, price: Number(e.target.value) })
-                            }} />
+                            <Form.Control
+                                type="number"
+                                name="price"
+                                value={formDetails.price}
+                                placeholder="Enter Price"
+                                onChange={handleChange}
+                            />
                         </Form.Group>
 
                         <Form.Group className="mb-3">
                             <Form.Label>Cost</Form.Label>
-                            <Form.Control value={formDetails?.cost} type="number" placeholder="Enter Cost" onChange={(e) => {
-                                setFormDetails({ ...formDetails, cost: Number(e.target.value) })
-                            }} />
+                            <Form.Control
+                                type="number"
+                                name="cost"
+                                value={formDetails.cost}
+                                placeholder="Enter Cost"
+                                onChange={handleChange}
+                            />
                         </Form.Group>
                     </Form>
+
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="outline-primary" type='submit' onClick={(e) => (addUpdateSku(e))}>
+                    <Button variant="outline-primary" type='submit'
+                        disabled={!formDetails.skuName || !formDetails.price || !formDetails.cost}
+                        onClick={(e) => (addUpdateSku(e))}>
                         {isEdit ? "Update SKU" : "Add SKU"}
                     </Button>
                 </Modal.Footer>
+                <div className="fs-6 d-block text-danger text-end ps-3 px-2 pb-2">
+                    {(!formDetails.skuName || formDetails.price === "" || formDetails.cost === "") && "Please fill all the fields"}
+                </div>
             </Modal>
         </div>
     )

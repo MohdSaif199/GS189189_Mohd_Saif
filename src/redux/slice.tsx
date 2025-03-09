@@ -14,7 +14,6 @@ const storeArraySlice = createSlice({
     initialState,
     reducers: {
         addStore: (state, action) => {
-            console.log(action.payload)
             state.storeArray.push(action.payload)
         },
         removeStore: (state, action) => {
